@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Componente Sweetalert2 para Pluma</title>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Yellowtail" rel="stylesheet">
+<link media="all" type="text/css" rel="stylesheet" href="http://pluma.rafflesargentina.com/css/pluma.min.css" />
+<link media="all" type="text/css" rel="stylesheet" href="http://pluma.rafflesargentina.com/css/custom.css" />
+<link media="all" type="text/css" rel="stylesheet" href="/css/pluma-sa2.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+  <div class="Loader"></div>
+  <header class="Navegacion Navegacion-Fija">
+    <div class="Caja">
+      <div class="Fila">
+        <a href="/" class="Logo">Pluma</a>
+        <nav class="Menu-Navegacion El--visible-desde-tablets">
+          <ul class="Lista-Menu-Navegacion">
+            <li class="Item-Menu-Navegacion"><a href="/">Ejemplos</a></li>
+            <li class="Item-Menu-Navegacion"><a href="#">Opciones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="Jumbotron El--visible-desde-tablets">
+    <div class="Caja">
+      <h1>Sweetalert 2</h1>
+      <h3>Ejemplos</h3>
+    </div>
+  </div>
+  <div class="Caja">
+    <section>
+      <div class="Fila">
+        <div class="Col-6">
+          <div class="Grupo-Formulario Texto-Centrado">
+            <p class="Texto-Grande">Mensaje básico</p>
+            <button id="alertaBasica" class="Btn-Default CentradoX">Dame click!</button>
+          </div>
+        </div>
+        <div class="Col-6">
+          <pre>
+<code class="language-js">swal("Acá hay un mensaje!");</code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="Fila">
+        <div class="Col-6">
+          <div class="Grupo-Formulario Texto-Centrado">
+            <p class="Texto-Grande">Mensaje con título</p>
+            <button id="alertaCTitulo" class="Btn-Default CentradoX">Dame click!</button>
+          </div>
+        </div>
+        <div class="Col-6">
+          <pre>
+<code class="language-js">swal("Acá hay un mensaje!", "Genial, no?");</code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="Fila">
+        <div class="Col-6">
+          <div class="Grupo-Formulario Texto-Centrado">
+            <p class="Texto-Grande">Mensaje success</p>
+            <button id="alertaSuccess" class="Btn-Default CentradoX">Dame click!</button>
+          </div>
+        </div>
+        <div class="Col-6">
+         <pre>
+<code class="language-js">swal("Bieen!", "Le diste click al botón.", "success");</code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="Fila">
+        <div class="Col-6">
+          <div class="Grupo-Formulario Texto-Centrado">
+            <p class="Texto-Grande">Mensaje warning con una función adjuntada al botón "Confirmar"...</p>
+            <button id="alertaWarning" class="Btn-Default CentradoX">Dame click!</button>
+          </div>
+        </div>
+        <div class="Col-6">
+          <pre>
+<code class="language-js">swal({</code>
+<code class="language-js">      text: "No podrás recuperar este archivo imaginario!",</code>
+<code class="language-js">      type: "warning",</code>
+<code class="language-js">      title: "Estás seguro?",</code>
+<code class="language-js">      closeOnConfirm: false,</code>
+<code class="language-js">      cancelButtonText: "Cancelar",</code>
+<code class="language-js">      showCancelButton: true,</code>
+<code class="language-js">      confirmButtonText: "Sí, quiero borrarlo",</code>
+<code class="language-js">}).then(function() {</code>
+<code class="language-js">      swal("Eliminado!", "Tu archivo imaginario fue eliminado.", "success");</code>
+<code class="language-js">});</code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="Fila">
+        <div class="Col-6">
+          <div class="Grupo-Formulario Texto-Centrado">
+            <p class="Texto-Grande">Reemplazo para la función "prompt"</p>
+            <button id="alertaPrompt" class="Btn-Default CentradoX">Dame click!</button>
+          </div>
+        </div>
+        </section>
+      </div>
+    </div>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="http://pluma.rafflesargentina.com/js/pluma.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/5.1.0/sweetalert2.js"></script>
+    <script type"text/javascript">
+var alertaBasica = qsById('alertaBasica');
+addEvent(alertaBasica, 'click', function() {
+    swal({
+        title: "Acá hay un mensaje!",
+        confirmButtonColor: "#3F51B5",
+    });
+});
+var alertaCTitulo = qsById('alertaCTitulo');
+addEvent(alertaCTitulo, 'click', function() {
+    swal({
+        text: "Genial, no?",
+        title: "Acá hay un mensaje!",
+        confirmButtonColor: "3F51B5",
+    });
+});
+var alertaSuccess = qsById('alertaSuccess');
+addEvent(alertaSuccess, 'click', function() {
+    swal({
+        text: "Le diste click al botón.",
+        type: "success",
+        title: "Bieen!",
+        confirmButtonColor: "3F51B5",
+    });
+});
+var alertaWarning = qsById('alertaWarning');
+addEvent(alertaWarning, 'click', function() {
+    swal({
+        text: "No podrás recuperar este archivo imaginario!",
+        type: "warning",
+        title: "Estás seguro?",
+        cancelButtonText: 'Cancelar',
+        showCancelButton: true,
+        confirmButtonText: "Sí, quiero borrarlo",
+        confirmButtonColor: "3F51B5",
+    }).then(function() {
+        swal("Eliminado!", "Tu archivo imaginario fue eliminado.", "success");
+    });
+});
+var alertaPrompt = qsById('alertaPrompt');
+addEvent(alertaPrompt, 'click', function() {
+    swal({
+        text: 'Escribi algo... cualquier cosa:',
+        input: 'text',
+        title: "Un input de texto!",
+        animation: "slide-from-top",
+        cancelButtonText: 'Cancelar',
+        inputPlaceholder: 'Escribí algo...',
+        showCancelButton: true,
+        confirmButtonColor: "3F51B5",
+        inputValidator: function(value) {
+            return new Promise(function(resolve, reject) {
+                if(value) {
+                    resolve();
+                } else {
+                    reject('Tenés que escribir algo!');
+                }
+            });
+        }
+    }).then(function(result) {
+        swal({
+            type: 'success',
+            html: 'Ingresaste: ' + result,
+        });
+    });
+});
+  </script>
+</body>
